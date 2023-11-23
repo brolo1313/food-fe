@@ -1,0 +1,59 @@
+@import "../../styles/settings";
+
+.navbar {
+  overflow: auto;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  background: $white;
+  color: $black;
+
+  border-radius: 20px;
+  height: 32px;
+  padding: 15px 30px;
+}
+
+.nav-link.active {
+  background: $generalColor;
+  color: black;
+}
+
+ul.nav {
+  column-gap: 15px;
+  flex-wrap: nowrap;
+
+  white-space: nowrap;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .showFavoriteBlock {
+    display: flex !important;
+  }
+}
+
+.favorite-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 70px;
+}
+
+#favorite-hint {
+  background-color: #f8b218;
+  color: black;
+  display: none;
+
+  transition: all 1s ease;
+}
+
+.material-icons {
+  font-size: 40px;
+}

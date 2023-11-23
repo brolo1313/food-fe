@@ -1,0 +1,23 @@
+@import "../../../../styles/settings";
+
+
+
+.image-wrapper {
+  overflow: hidden;
+  max-width: 150px;
+  max-height: 150px;
+  margin-right: 10px;
+
+  border: 2px solid $generalColor;
+  border-radius: 10px;
+}
+
+.image-wrapper img {
+  max-height: 100%;
+  width: 100%;
+}
+
+
+.favorite-part-modal app-favorite {
+  padding: 30px;
+}

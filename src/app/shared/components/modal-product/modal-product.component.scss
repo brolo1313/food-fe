@@ -1,0 +1,19 @@
+@import "../../../../styles/settings";
+
+.image-wrapper {
+  overflow: hidden;
+  height: 350px;
+}
+
+.image-wrapper img {
+  max-height: 100%;
+  width: 100%;
+}
+
+.favorite-wrapper {
+  top: 25px;
+  left: 30px;
+
+  width: 40px;
+  height: 40px;
+}

@@ -1,0 +1,47 @@
+<div class="card align-datas-center col-12">
+  <div class="d-flex justify-content-end p-2 closeModal" (click)="activeModal.close('Close click')"></div>
+  <div class="image-wrapper">
+    <img
+      src="{{ data.imageSrc ?? defaultImage }}"
+      class="card-img-top"
+      alt="{{ data.altImage ?? 'defaultAlt' }}"
+    />
+
+    <div class="favorite-wrapper" (click)="togglerToFavorite($event, data)">
+      <div class="circle pos-relative">
+        <svg
+          class="favorite cursor-pointer"
+          [ngClass]="{ active: checkFavoriteList(data) }"
+          width="20"
+          height="20"
+          viewBox="0 0 12 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.27737 9.8697L6 9.68477L5.72263 9.8697L0.5 13.3519V2.28571C0.5 1.29949 1.29949 0.5 2.28571 0.5H9.71429C10.7005 0.5 11.5 1.29949 11.5 2.28571V13.3519L6.27737 9.8697Z"
+            [style.stroke]="checkFavoriteList(data) ? '#F8B218' : 'black'"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="card-body col-8">
+    <h5 class="card-title">{{ data.name }}</h5>
+    <p class="card-text text-decoration-line-through mb-0">
+      {{ data.oldPrice }}
+    </p>
+    <p class="card-text text-danger mb-0">{{ data.currentPrice }} &#8372;</p>
+    <p class="card-text mb-0">{{ data.description }}</p>
+    <div class="d-flex">
+      <img
+        style="width: 15px; margin-right: 5px"
+        src="assets/icons/card-icons/weight-icon.svg"
+        class="card-img-top"
+        alt="weight-icon"
+      />
+
+      <p class="card-text mb-0">{{ data.weight }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<nav id="navbar-example2" class="d-md-none navbar bg-dark px-3">
+  <ul class="nav nav-pills" #linkContainer>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspySets">Сети</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspyClassicRols">Класичні роли</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspySalats">Салати</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspySoups">Супи</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspyWarmDishes">Гарячі страви</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="#scrollspyWok">Локшина</a>
+    </li>
+  </ul>
+</nav>
+
+  <div [ngClass]="{showFavoriteBlock: favoriteService.getFavoriteItems().length}" id="favorite-hint" class="d-md-none justify-content-between align-items-center" (click)="openFavoriteModal()">
+    <div class="fw-bold p-4">
+      <h3>Ваші обрані {{ favoriteService.getFavoriteItems().length }}</h3>
+    </div>
+    <div>
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  </div>
+
+<div
+  #anchorWrapper
+  data-bs-spy="scroll"
+  data-bs-target="#navbar-example2"
+  data-bs-root-margin="0px 0px -40%"
+  data-bs-smooth-scroll="true"
+  class="scrollspy-example bg-body-dark p-3 rounded-2"
+  tabindex="0"
+>
+  <div>
+    <h4 class="text-center text-white" id="scrollspySets">Сети</h4>
+    <app-card-product [dataInfo]="setList"></app-card-product>
+  </div>
+
+  <div>
+    <h4 class="text-center text-white" id="scrollspyClassicRols">Класичні роли</h4>
+    <app-card-product [dataInfo]="classicRollsList"></app-card-product>
+  </div>
+  <div>
+    <h4 class="text-center text-white" id="scrollspySalats">Салати</h4>
+    <app-card-product [dataInfo]="saladList"></app-card-product>
+  </div>
+  <div>
+    <h4 class="text-center text-white" id="scrollspySoups">Супи</h4>
+    <app-card-product [dataInfo]="soupList"></app-card-product>
+  </div>
+  <div>
+    <h4 class="text-center text-white" id="scrollspyWarmDishes">Гарячі страви</h4>
+    <app-card-product [dataInfo]="warmDishesList"></app-card-product>
+  </div>
+  <div>
+    <h4 class="text-center text-white" id="scrollspyWok">Локшина</h4>
+    <app-card-product [dataInfo]="wokList"></app-card-product>
+  </div>
+</div>

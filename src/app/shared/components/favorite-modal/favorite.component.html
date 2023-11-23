@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center p-3 fw-bold">
+    <h2>Обране</h2>
+   
+</div>
+<div class="d-flex justify-content-end p-2 closeModal" (click)="activeModal.close('Close click')"></div>
+<app-card-product *ngIf="favoriteService.getFavoriteItems().length; else noData" [dataInfo]="favoriteService.getFavoriteItems()"  [isFavoriteBlock]="true"></app-card-product>
+
+<ng-template #noData>
+    <div style="height: 150px;" class="d-flex justify-content-center align-items-center fz-2 fw-bold">
+        Немає обраних
+    </div>
+</ng-template>

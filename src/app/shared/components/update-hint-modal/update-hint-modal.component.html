@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h4 class="modal-title">Увага!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="dismiss('Close')">
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="mb-0">Досутпне оновлення.</p>
+    <p> <small>Натисніть кнопку оновити або перезавантажте сторінку</small></p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="dismiss('Close')">Не зараз</button>
+    <button type="button" class="btn btn-primary" (click)="closeWithResult('Confirm')">Оновити</button>
+  </div>
