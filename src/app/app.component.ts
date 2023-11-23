@@ -6,6 +6,7 @@ import { SwPush, SwUpdate } from '@angular/service-worker';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateHintModalComponent } from './shared/components/update-hint-modal/update-hint-modal.component';
 import { HttpClient } from "@angular/common/http";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -104,12 +105,13 @@ export class AppComponent {
   }
 
   public subscribeToNotifications() {
+    console.log(environment.apiUrl);
     if (this.push.isEnabled) {
       this.push.requestSubscription({
         serverPublicKey: this.VAPID_PUBLIC_KEY
       })
         .then(sub => {
-          this.http.post<any>('http://localhost:4000/save-subscription', sub).subscribe({
+          this.http.post<any>(`${environment.apiUrl}/save-subscription`, sub).subscribe({
             next: response => {
               console.log('Server response:', response.message);
             },
